@@ -8,9 +8,9 @@ The website represents a technical event platform featuring event information, s
 
 ---
 
-<div align = 'center'>
-
 ## Project Information
+
+<div align = 'center'>
 
 | Property      | Details                     |
 | ------------- | --------------------------- |
