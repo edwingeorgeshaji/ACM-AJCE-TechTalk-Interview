@@ -247,29 +247,6 @@ git push origin feature/new-feature
 
 ---
 
-## Author
-
-**Edwin George Shaji**
-
-Computer Science Engineering Student
-Amal Jyothi College of Engineering
-
-GitHub: https://github.com/edwingeorgeshaji
-
-LinkedIn: *Add LinkedIn URL*
-
-Email: *Add Email Address*
-
----
-
-## Repository
-
-GitHub Repository:
-
-https://github.com/edwingeorgeshaji/ACM-AJCE-TechTalk-Interview
-
----
-
 ## License
 
 This project is licensed under the MIT License.
