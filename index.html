@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACM TechTalk 2026 — ACM AJCE Flagship Technical Event</title>
+  <meta name="description"
+    content="Join ACM TechTalk 2026, the flagship technical event of ACM AJCE. Explore cutting-edge talks, hands-on workshops, and connect with industry leaders and the student tech community." />
+  <meta name="theme-color" content="#008ECF" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/acm.png" type="image/png" />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== SITE-WIDE CANVAS BACKGROUND ===== -->
+  <canvas class="site-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div class="loader-overlay" id="loaderOverlay" aria-hidden="true"></div>
+  <div class="loader-content-wrap" id="loaderContent" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-spinner" aria-hidden="true"></div>
+      <img class="loader-logo" src="images/acm loading page.png" alt="ACM AJCE Logo" />
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar-brand" aria-label="ACM TechTalk 2026 Home">
+        <a href="https://ajce.acm.org/" aria-label="ACM Home" target="_blank" rel="noopener noreferrer">
+          <img class="brand-logo" src="images/acm.png" alt="ACM Logo" />
+        </a>
+        <a href="#hero" aria-label="Back to top">
+          <span class="accent-gradient">TechTalk</span>
+        </a>
+      </div>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-outline" id="navCta">
+          <span>Register Now</span>
+        </a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+          type="button">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+
+    <div class="hero-content">
+      <div class="hero-badges-row">
+        <div class="hero-badge hero-badge-timer" id="countdownBadge">
+          <svg class="timer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span id="countdownText">--mo --d --h --m --s</span>
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="accent">ACM TechTalk</span><br />
+        2026
+      </h1>
+
+      <p class="hero-subtitle">
+        Where innovation meets community. A day of cutting-edge talks, hands-on workshops, and meaningful connections
+        with the brightest minds in tech.
+      </p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span>September 14, 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>RB Auditorium, AJCE</span>
+        </div>
+        <div class="hero-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span>Full Day Event</span>
+        </div>
+      </div>
+
+      <div class="hero-actions" id="register">
+        <a href="register.html" class="btn btn-primary btn-hero btn-lg">
+          <span>Register Now</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <a href="#schedule" class="btn btn-outline btn-lg">
+          <span>View Schedule</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-indicator-line"></div>
+    </div>
+  </header>
+
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-content">
+        <span class="section-label reveal">About the Event</span>
+        <h2 class="section-title reveal reveal-delay-1" id="about-heading">
+          The Future of Tech,<br />Built by Students
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          ACM TechTalk 2026 is the flagship technical event hosted by <strong>ACM AJCE</strong> bringing together
+          students,
+          researchers, and industry professionals for a day of knowledge exchange, inspiration, and innovation.
+          Whether you're a first-year enthusiast or a final-year builder, TechTalk is where ideas ignite.
+        </p>
+
+        <div class="about-stats reveal reveal-delay-3">
+          <div class="stat-card">
+            <div class="stat-number">300+</div>
+            <div class="stat-label">Attendees</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Speakers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Tracks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SPEAKERS ===== -->
+  <section class="speakers" id="speakers" aria-labelledby="speakers-heading">
+    <div class="container">
+      <div class="speakers-header">
+        <span class="section-label reveal">Featured Speakers</span>
+        <h2 class="section-title reveal reveal-delay-1" id="speakers-heading">
+          Learn from the Best
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Our curated lineup brings together industry veterans, researchers, and emerging voices shaping the future of
+          technology.
+        </p>
+      </div>
+
+      <div class="speakers-grid">
+        <!-- Speaker 1 -->
+        <article class="speaker-card reveal reveal-delay-1" aria-label="Speaker: Dr. Ananya Krishnan">
+          <div class="speaker-image-wrap">
+            <img src="images/woman.png" alt="Dr. Ananya Krishnan" />
+            <div class="speaker-overlay">
+              <div class="speaker-social-links">
+                <a href="#" class="speaker-social-link" aria-label="LinkedIn profile of Dr. Ananya Krishnan">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a href="#" class="speaker-social-link" aria-label="Twitter profile of Dr. Ananya Krishnan">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-info">
+            <h3 class="speaker-name">Dr. Ananya Krishnan</h3>
+            <div class="speaker-role">AI Research Lead, Google DeepMind</div>
+            <p class="speaker-bio">Pioneering research in foundation models and responsible AI deployment at scale.</p>
+          </div>
+        </article>
+
+        <!-- Speaker 2 -->
+        <article class="speaker-card reveal reveal-delay-2" aria-label="Speaker: Rahul Menon">
+          <div class="speaker-image-wrap">
+            <img src="images/man.png" alt="Rahul Menon" />
+            <div class="speaker-overlay">
+              <div class="speaker-social-links">
+                <a href="#" class="speaker-social-link" aria-label="LinkedIn profile of Rahul Menon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a href="#" class="speaker-social-link" aria-label="GitHub profile of Rahul Menon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-info">
+            <h3 class="speaker-name">Rahul Menon</h3>
+            <div class="speaker-role">Staff Engineer, Microsoft</div>
+            <p class="speaker-bio">Building distributed systems at cloud scale with a focus on developer experience.</p>
+          </div>
+        </article>
+
+        <!-- Speaker 3 -->
+        <article class="speaker-card reveal reveal-delay-3" aria-label="Speaker: Priya Nair">
+          <div class="speaker-image-wrap">
+            <img src="images/woman.png" alt="Priya Nair" />
+            <div class="speaker-overlay">
+              <div class="speaker-social-links">
+                <a href="#" class="speaker-social-link" aria-label="LinkedIn profile of Priya Nair">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a href="#" class="speaker-social-link" aria-label="Twitter profile of Priya Nair">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-info">
+            <h3 class="speaker-name">Priya Nair</h3>
+            <div class="speaker-role">CTO & Co-founder, NeuralStack</div>
+            <p class="speaker-bio">Serial entrepreneur building the next generation of AI-native development tools.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SCHEDULE ===== -->
+  <section class="schedule" id="schedule" aria-labelledby="schedule-heading">
+    <div class="container">
+      <div class="schedule-header">
+        <span class="section-label reveal">Event Schedule</span>
+        <h2 class="section-title reveal reveal-delay-1" id="schedule-heading">
+          A Day of Innovation
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          From opening keynotes to closing networking, every moment is crafted to maximize your learning and
+          connections.
+        </p>
+      </div>
+
+      <div class="timeline" role="list" aria-label="Event timeline">
+        <!-- Registration -->
+        <div class="timeline-item reveal" data-type="break" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              8:30 AM — 9:00 AM
+              <span class="timeline-type-badge">Registration</span>
+            </div>
+            <h3 class="timeline-title">Check-in & Welcome Kit</h3>
+          </div>
+        </div>
+
+        <!-- Opening Keynote -->
+        <div class="timeline-item reveal reveal-delay-1" data-type="keynote" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              9:00 AM — 10:00 AM
+              <span class="timeline-type-badge">Keynote</span>
+            </div>
+            <h3 class="timeline-title">The Next Frontier of AI</h3>
+            <p class="timeline-speaker">Dr. Ananya Krishnan · AI Research Lead, Google DeepMind</p>
+          </div>
+        </div>
+
+        <!-- Tech Talk 1 -->
+        <div class="timeline-item reveal reveal-delay-2" data-type="talk" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              10:15 AM — 11:00 AM
+              <span class="timeline-type-badge">Talk</span>
+            </div>
+            <h3 class="timeline-title">Building Resilient Distributed Systems</h3>
+            <p class="timeline-speaker">Rahul Menon · Staff Engineer, Microsoft</p>
+          </div>
+        </div>
+
+        <!-- Workshop -->
+        <div class="timeline-item reveal reveal-delay-3" data-type="workshop" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              11:15 AM — 12:30 PM
+              <span class="timeline-type-badge">Workshop</span>
+            </div>
+            <h3 class="timeline-title">Hands-on: Deploy Your First ML Model</h3>
+            <p class="timeline-speaker">Priya Nair · CTO, NeuralStack</p>
+          </div>
+        </div>
+
+        <!-- Lunch -->
+        <div class="timeline-item reveal" data-type="break" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              12:30 PM — 1:30 PM
+              <span class="timeline-type-badge">Break</span>
+            </div>
+            <h3 class="timeline-title">Lunch & Networking</h3>
+          </div>
+        </div>
+
+        <!-- Tech Talk 2 -->
+        <div class="timeline-item reveal reveal-delay-1" data-type="talk" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              1:30 PM — 2:15 PM
+              <span class="timeline-type-badge">Talk</span>
+            </div>
+            <h3 class="timeline-title">The Art of Developer Experience</h3>
+            <p class="timeline-speaker">Panel · Industry Experts</p>
+          </div>
+        </div>
+
+        <!-- Lightning Talks -->
+        <div class="timeline-item reveal reveal-delay-2" data-type="talk" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              2:30 PM — 3:30 PM
+              <span class="timeline-type-badge">Talk</span>
+            </div>
+            <h3 class="timeline-title">Lightning Talks — Student Showcase</h3>
+            <p class="timeline-speaker">5 student speakers · 10 min each</p>
+          </div>
+        </div>
+
+        <!-- Tea Break -->
+        <div class="timeline-item reveal" data-type="break" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              3:30 PM — 3:50 PM
+              <span class="timeline-type-badge">Break</span>
+            </div>
+            <h3 class="timeline-title">Tea Break</h3>
+          </div>
+        </div>
+
+        <!-- Closing Keynote -->
+        <div class="timeline-item reveal reveal-delay-1" data-type="keynote" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              4:00 PM — 5:00 PM
+              <span class="timeline-type-badge">Keynote</span>
+            </div>
+            <h3 class="timeline-title">Closing Keynote: From Student to Builder</h3>
+            <p class="timeline-speaker">Priya Nair · CTO & Co-founder, NeuralStack</p>
+          </div>
+        </div>
+
+        <!-- Networking -->
+        <div class="timeline-item reveal reveal-delay-2" data-type="break" role="listitem">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-time">
+              5:00 PM — 5:30 PM
+              <span class="timeline-type-badge">Networking</span>
+            </div>
+            <h3 class="timeline-title">Open Networking & Wrap-up</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-header">
+        <span class="section-label reveal">Get in Touch</span>
+        <h2 class="section-title reveal reveal-delay-1" id="contact-heading">
+          Contact Us
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Have questions about TechTalk 2026? We'd love to hear from you. Reach out through any of the channels below.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal reveal-delay-1">
+          <a href="mailto:acm@ajce.in" class="contact-icon" aria-label="Email Us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+          <h3 class="contact-card-title">Email</h3>
+          <div class="contact-card-detail">
+            <a href="mailto:acm@ajce.in">acm@ajce.in</a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal reveal-delay-2">
+          <a href="tel:+919876543210" class="contact-icon" aria-label="Call Us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </a>
+          <h3 class="contact-card-title">Phone</h3>
+          <div class="contact-card-detail">
+            <a href="tel:+919876543210">+91 98765 43210</a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal reveal-delay-3">
+          <a href="https://www.google.com/maps/dir//Amal+Jyothi+College+of+Engineering+Autonomous,+P.O+Kanjirapally+-+Erumely+Road,+Koovappally,+Kerala+686518/@11.3671283,75.7487774,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3b063626ed32c771:0xff305e1affdbb4b4!2m2!1d76.8226307!2d9.5283405?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="Get Directions">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </a>
+          <h3 class="contact-card-title">Location</h3>
+          <div class="contact-card-detail">
+            Amal Jyothi College of Engineering,<br />
+            Kanjirapally, Kottayam, Kerala 686518
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-content">
+          <a href="https://ajce.acm.org/" target="_blank" rel="noopener noreferrer" class="footer-brand">
+            <img class="brand-logo" src="images/acm.png" alt="ACM Logo" />
+            <span>ACM AJCE</span>
+          </a>
+
+          <div class="footer-social" aria-label="Social media links">
+            <!-- Website -->
+            <a href="https://ajce.acm.org/" target="_blank" rel="noopener noreferrer"
+              aria-label="ACM AJCE Official Website">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/acm_ajce/" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow ACM AJCE on Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/acm-ajce-student-chapter/" target="_blank"
+              rel="noopener noreferrer" aria-label="Follow ACM AJCE on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <!-- Twitter/X -->
+            <a href="https://x.com/ACM_AJCE/" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow ACM AJCE on X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 ACM AJCE Student Chapter. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Code of Conduct</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="assets/script.js"></script>
+</body>
+
+</html>
