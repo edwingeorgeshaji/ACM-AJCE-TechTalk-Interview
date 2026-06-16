@@ -8,6 +8,8 @@ The website represents a technical event platform featuring event information, s
 
 ---
 
+<div align = 'center'>
+
 ## Project Information
 
 | Property      | Details                     |
@@ -19,6 +21,8 @@ The website represents a technical event platform featuring event information, s
 | Repository    | ACM-AJCE-TechTalk-Interview |
 | Technologies  | HTML5, CSS3, JavaScript     |
 | License       | MIT License                 |
+
+</div>
 
 ---
 
