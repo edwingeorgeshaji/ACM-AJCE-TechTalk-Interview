@@ -24,11 +24,15 @@ The website represents a technical event platform featuring event information, s
 
 ## Badges
 
+<div align = 'center'>
+  
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square\&logo=html5\&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square\&logo=css3\&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square\&logo=javascript\&logoColor=black)
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-success?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+
+</div>
 
 ---
 
@@ -49,23 +53,6 @@ Key objectives include:
 
 ---
 
-## Preview
-
-### Landing Page
-
-> Add screenshots or GIFs below.
-
-```md
-/images/acm_loading_page.png
-```
-
-### Registration Portal
-
-```md
-/images/acm_original.png
-```
-
----
 
 ## Live Demo
 
