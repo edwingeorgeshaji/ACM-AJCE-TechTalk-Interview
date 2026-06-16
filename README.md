@@ -164,35 +164,6 @@ Right Click → Open with Live Server
 
 ---
 
-## Project Structure
-
-<details>
-<summary>View Folder Structure</summary>
-
-```text
-ACM-AJCE-TechTalk-Interview/
-│
-├── assets/
-│   ├── script.js
-│   └── styles.css
-│
-├── images/
-│   ├── acm loading page.png
-│   ├── acm_original.png
-│   ├── acm.png
-│   ├── man.png
-│   └── woman.png
-│
-├── index.html
-├── register.html
-├── README.md
-└── LICENSE
-```
-
-</details>
-
----
-
 ## Design Highlights
 
 The project incorporates several modern frontend design techniques:
